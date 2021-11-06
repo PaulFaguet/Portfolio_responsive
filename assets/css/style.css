@@ -6,7 +6,7 @@
   --header-height: 3rem;
 
   /*============== COLORS ==============*/
-  --hue-color: 210;
+  --hue-color: 360;
 
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
@@ -290,12 +290,11 @@ img {
 }
 
 .home_blob {
-  width: 300px;
   fill: var(--first-color);
 }
 
 .home_blob-image {
-  width: 170px;
+  width: 140px;
 }
 
 .home_data {
@@ -321,12 +320,14 @@ img {
   display: none;
 }
 
-.home_scroll-button {
+.home_scroll-button,
+.home_scroll-arrow {
   color: var(--first-color);
   transition: 0.3s;
 }
 
-.home_scroll-button:hover {
+.home_scroll-button:hover,
+.home_scroll-button:hover .home_scroll-arrow {
   transform: translateY(0.25rem);
 }
 
@@ -395,6 +396,10 @@ img {
   color: var(--first-color-alt);
 }
 
+.button:hover .button_icon {
+  transform: translateX(0.25rem);
+}
+
 /* about */
 
 .about {
@@ -438,6 +443,10 @@ img {
 .about_buttons {
   display: flex;
   justify-content: center;
+}
+
+.about_buttons .button:hover .button_icon {
+  transform: translateY(0.25rem);
 }
 
 /* skills */
@@ -509,11 +518,11 @@ img {
 }
 
 .skills_html {
-  width: 90%;
+  width: 70%;
 }
 
 .skills_css {
-  width: 80%;
+  width: 70%;
 }
 
 .skills_js {
@@ -528,6 +537,10 @@ img {
   width: 50%;
 }
 
+.skills_symfony {
+  width: 60%;
+}
+
 .skills_node {
   width: 70%;
 }
@@ -537,19 +550,55 @@ img {
 }
 
 .skills_python {
-  width: 55%;
+  width: 20%;
 }
 
-.skills_figma {
+.skills_swift {
+  width: 10%;
+}
+
+.skills_expo_rn {
   width: 50%;
 }
 
-.skills_sketch {
-  width: 70%;
+.skills_ionic {
+  width: 30%;
 }
 
-.skills_photoshop {
-  width: 30%;
+.skills_reactjs {
+  width: 40%;
+}
+
+.skills_alpinejs {
+  width: 10%;
+}
+
+.skills_jquery {
+  width: 50%;
+}
+
+.skills_tailwind {
+  width: 0%;
+}
+
+.skills_bulma {
+  width: 0%;
+}
+
+.skills_r {
+  width: 0%;
+}
+
+.skills_express {
+  width: 0%;
+}
+
+.skills_wordpress {
+  width: 80%;
+}
+
+.skills_under_titles {
+  padding-top: 0.5rem;
 }
 
 .skills_close .skills_list {
@@ -564,6 +613,14 @@ img {
 
 .skills_open .skills_arrow {
   transform: rotate(-180deg);
+}
+
+.skills_under_data {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
+.skills_titles_under_data {
+  margin-top: 0.5rem;
 }
 
 /* qualification */
@@ -919,7 +976,7 @@ img {
 .footer_copy {
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--text-color-light);
+  color: var(--first-color-lighter);
   margin-top: var(--mb-3);
 }
 
