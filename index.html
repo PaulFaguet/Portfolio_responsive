@@ -790,7 +790,7 @@
                                 <i class="uil uil-phone contact_icon"></i>
 
                                 <div>
-                                    <h3 class="contact_title">Call Me</h3>
+                                    <h3 class="contact_title">Appellez-moi</h3>
                                     <span class="contact_subtitle">08 98 56 76 65</span>
                                 </div>
                             </div>
@@ -808,37 +808,37 @@
                                 <i class="uil uil-map-marker contact_icon"></i>
 
                                 <div>
-                                    <h3 class="contact_title">Location</h3>
+                                    <h3 class="contact_title">Localisation</h3>
                                     <span class="contact_subtitle">Lyon, France</span>
                                 </div>
                             </div>
                         </div>
 
-                        <form action="" class="contact_form grid">
+                        <form action="javascript:sendMail()" class="contact_form grid" name="pmForm" id="pmForm" method="post">
                             <div class="contact_inputs grid">
                                 <div class="contact_content">
-                                    <label for="" class="contact_label">Name</label>
-                                    <input type="text" class="contact_input">
+                                    <label for="" class="contact_label">Votre nom</label>
+                                    <input type="text" class="contact_input" id="form_name">
                                 </div>
                             </div>
 
                             <div class="contact_inputs grid">
                                 <div class="contact_content">
-                                    <label for="" class="contact_label">Email</label>
-                                    <input type="email" class="contact_input">
+                                    <label for="" class="contact_label">Votre adresse mail</label>
+                                    <input type="email" class="contact_input" id="form_email">
                                 </div>
                             </div>
                             <div class="contact_content">
-                                <label for="" class="contact_label">Project</label>
-                                <input type="text" class="contact_input">
+                                <label for="" class="contact_label">Le nom de votre projet ou l'objet de votre demande</label>
+                                <input type="text" class="contact_input" id="form_project">
                             </div>
                             <div class="contact_content">
-                                <label for="" class="contact_label">Message</label>
-                                <textarea name="" id="" cols="0" rows="7" class="contact_input"></textarea>
+                                <label for="" class="contact_label">Votre message</label>
+                                <textarea name="form_content" id="" cols="0" rows="7" class="contact_input"></textarea>
                             </div>
 
                             <div>
-                                <a href="#" class="button button-flex">
+                                <a href="#contactMe" class="button button-flex" id="sendMail">
                                     Send Message
                                     <i class="uil uil-message button_icon"></i>
                                 </a>

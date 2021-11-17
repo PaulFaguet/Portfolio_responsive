@@ -173,3 +173,32 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+// Send email
+// VÉRIFIER SI LES INPUT SONT VIDES OU NON 
+const sendMailButton = document.getElementById('sendMail');
+const formName = document.getElementById('form_name');
+const formEmail = document.getElementById('form_email');
+const formProject = document.getElementById('form_project');
+const formContent = document.getElementsByName('form_content');
+
+sendMailButton.addEventListener('click', () => {
+    if (formName) {
+        let senderName = formName.value;
+    }
+
+    if (formEmail) {
+        let senderEmail = formEmail.value;
+    }
+
+    if (formProject) {
+        let senderProject = formProject.value;
+    }
+
+    if (formContent) {
+        let senderContent = formContent.value;
+        console.log(formContent.value)
+    }
+
+    //console.log("Bonjour, Monsieur ou Madame", senderName, "vous a envoyé un message concernant le projet nommé :", senderProject + ". Le contenu du message est le suivant :","Son email de retour est", senderEmail);
+})
