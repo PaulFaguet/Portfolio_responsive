@@ -931,6 +931,14 @@ img {
   padding: 0.25rem 0.5rem 0.5rem 0;
 }
 
+.alert_vanish {
+  display: none;
+}
+
+.alert_load {
+  display: block;
+}
+
 /* footer */
 .footer {
   padding-top: 2rem;

@@ -180,25 +180,43 @@ const sendMailButton = document.getElementById('sendMail');
 const formName = document.getElementById('form_name');
 const formEmail = document.getElementById('form_email');
 const formProject = document.getElementById('form_project');
-const formContent = document.getElementsByName('form_content');
+const formContent = document.getElementById('form_content');
+const formTel = document.getElementById('form_tel');
+
+const alertDiv = document.getElementById('alert');
+
+function sendMail() {
+    if (formName.value != "" && formEmail.value != "" && formProject.value != "" && formContent.value != "") {
+
+        var tempParams = {
+            from_name: formName.value,
+            from_email: formEmail.value,
+            from_tel: formTel.value,
+            to_name: 'Paul',
+            object: formProject.value,
+            message: formContent.value
+        };
+
+        emailjs.send('service_avzdjev', 'template_rm6zn8w', tempParams)
+        .then(function(res) {
+            console.log("succes", res.status);
+            formName.value = "";
+            formEmail.value = "";
+            formTel.value = "";
+            formProject.value = "";
+            formContent.value = "";
+
+            alertDiv.classList.add("alert_load");
+            setTimeout(() => {
+                alertDiv.classList.add("alert_vanish");
+                alertDiv.classList.remove("alert_load");
+            }, 7000);
+        });
+    } else {
+        console.log('ntm')
+    }
+}
 
 sendMailButton.addEventListener('click', () => {
-    if (formName) {
-        let senderName = formName.value;
-    }
-
-    if (formEmail) {
-        let senderEmail = formEmail.value;
-    }
-
-    if (formProject) {
-        let senderProject = formProject.value;
-    }
-
-    if (formContent) {
-        let senderContent = formContent.value;
-        console.log(formContent.value)
-    }
-
-    //console.log("Bonjour, Monsieur ou Madame", senderName, "vous a envoyé un message concernant le projet nommé :", senderProject + ". Le contenu du message est le suivant :","Son email de retour est", senderEmail);
+    sendMail();
 })
