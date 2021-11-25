@@ -1191,9 +1191,6 @@ img {
   .about_info {
     justify-content: space-between;
   }
-  .about_buttons {
-    justify-content: initial;
-  }
 
   .qualification_tabs {
     justify-content: space-evenly;
