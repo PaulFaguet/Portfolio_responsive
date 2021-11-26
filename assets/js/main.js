@@ -177,16 +177,25 @@ themeButton.addEventListener('click', () => {
 // Send email
 // VÉRIFIER SI LES INPUT SONT VIDES OU NON 
 const sendMailButton = document.getElementById('sendMail');
+
 const formName = document.getElementById('form_name');
 const formEmail = document.getElementById('form_email');
 const formProject = document.getElementById('form_project');
 const formContent = document.getElementById('form_content');
 const formTel = document.getElementById('form_tel');
 
-const alertDiv = document.getElementById('alert');
+const alertDiv = document.getElementById('alert_good_message');
+const badMessageAlertDiv = document.getElementById('alert_bad_message');
+
+const emailErrorMessage = document.getElementById('email_error_message');
+const nameErrorMessage = document.getElementById('name_error_message');
+const telErrorMessage = document.getElementById('tel_error_message');
+const projectErrorMessage = document.getElementById('project_error_message');
+const contentErrorMessage = document.getElementById('content_error_message');
+
 
 function sendMail() {
-    if (formName.value != "" && formEmail.value != "" && formProject.value != "" && formContent.value != "") {
+    if (formName.value != "" && formEmail.value != "" && formProject.value != "" && formContent.value != "" && formTel.value != "") {
 
         var tempParams = {
             from_name: formName.value,
@@ -213,7 +222,43 @@ function sendMail() {
             }, 7000);
         });
     } else {
-        console.log('ntm')
+        if (formName.value === "") {
+            nameErrorMessage.classList.add('alert_load')
+            setTimeout(() => {
+                nameErrorMessage.classList.remove('alert_load')
+                nameErrorMessage.classList.add('alert_vanish')
+            }, 15000);
+        } else if (formEmail.value === "") {
+            emailErrorMessage.classList.add('alert_load')
+            setTimeout(() => {
+                emailErrorMessage.classList.remove('alert_load')
+                emailErrorMessage.classList.add('alert_vanish')
+            }, 15000);
+            
+        } else if (formTel.value === "") {
+            telErrorMessage.classList.add('alert_load')
+            setTimeout(() => {
+                telErrorMessage.classList.remove('alert_load')
+                telErrorMessage.classList.add('alert_vanish')
+            }, 15000);
+        } else if (formProject.value === "") {
+            projectErrorMessage.classList.add('alert_load')
+            setTimeout(() => {
+                projectErrorMessage.classList.remove('alert_load')
+                projectErrorMessage.classList.add('alert_vanish')
+            }, 15000);
+        } else {
+            contentErrorMessage.classList.add('alert_load')
+            setTimeout(() => {
+                contentErrorMessage.classList.remove('alert_load')
+                contentErrorMessage.classList.add('alert_vanish')
+            }, 15000);
+        }
+        badMessageAlertDiv.classList.add("alert_load");
+        setTimeout(() => {
+            badMessageAlertDiv.classList.add("alert_vanish");
+            badMessageAlertDiv.classList.remove("alert_load");
+        }, 15000);
     }
 }
 

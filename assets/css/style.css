@@ -931,12 +931,32 @@ img {
   padding: 0.25rem 0.5rem 0.5rem 0;
 }
 
+.contact_error_message {
+  margin-top: -1.5rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+
 .alert_vanish {
   display: none;
 }
 
 .alert_load {
   display: block;
+}
+
+.alert-success {
+  background-color: #58d68d;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.alert-error {
+  background-color: #e74c3c;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 /* footer */

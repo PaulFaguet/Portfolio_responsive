@@ -829,6 +829,7 @@
                                     <label for="" class="contact_label">Votre nom et prénom</label>
                                     <input type="text" class="contact_input" id="form_name">
                                 </div>
+                                <p class="contact_error_message alert_vanish" id="name_error_message">Merci de rentrer votre nom et prénom.</p>
                             </div>
 
                             <div class="contact_inputs grid">
@@ -836,30 +837,46 @@
                                     <label for="" class="contact_label">Votre adresse mail</label>
                                     <input type="email" class="contact_input" id="form_email">
                                 </div>
+                                <p class="contact_error_message alert_vanish" id="email_error_message">Merci de rentrer une adresse mail valide.</p>
                             </div>
+
                             <div class="contact_inputs grid">
                                 <div class="contact_content">
-                                    <label for="" class="contact_label">Votre numéro de téléphone pour que je puisse vous recontacter</label>
+                                    <label for="" class="contact_label">Votre numéro de téléphone</label>
                                     <input type="text" class="contact_input" id="form_tel">
                                 </div>
+                                <p class="contact_error_message alert_vanish" id="tel_error_message">Merci de rentrer un numéro de téléphone valide.</p>
                             </div>
+
                             <div class="contact_content">
                                 <label for="" class="contact_label">Le nom de votre projet ou l'objet de votre demande</label>
                                 <input type="text" class="contact_input" id="form_project">
                             </div>
+                            <p class="contact_error_message alert_vanish" id="project_error_message">Merci de rentrer le nom de votre merveilleuse idée.</p>
+
                             <div class="contact_content">
                                 <label for="" class="contact_label">💡 Expliquez-moi votre idée</label>
-                                <textarea name="" id="form_content" cols="0" rows="7" class="contact_input"></textarea>
+                                <textarea name="" id="form_content" cols="0" rows="5" class="contact_input"></textarea>
                             </div>
+                            <p class="contact_error_message alert_vanish" id="content_error_message">Racontez-moi votre idée.</p>
 
-                            <div class="alert alert-success alert_vanish" role="alert" id="alert">
-                                Votre message a bien été envoyé, je vous recontacte dans les plus brefs délais.
-                                <br> Merci !
+                            <div class="alert alert-success alert_vanish" role="alert" id="alert_good_message">
+                                <p>
+                                    Votre idée a bien été envoyée, je vous recontacte dans les plus brefs délais.
+                                    <br> Merci !
+                                </p>
+                            </div>
+                            <div class="alert alert-error alert_vanish" role="alert" id="alert_bad_message">
+                                <p>
+                                    Un problème est intervenu durant l'envoie du message.
+                                    <br>
+                                    Si le problème persiste, contactez-moi par mail directement, merci.
+                                </p> 
                             </div>
 
                             <div>
                                 <a href="#contactMe" class="button button-flex" id="sendMail">
-                                    Send Message
+                                    Envoyer l'idée
                                     <i class="uil uil-message button_icon"></i>
                                 </a>
                             </div>
