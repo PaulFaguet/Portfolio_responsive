@@ -61,6 +61,7 @@ tabs.forEach(tab => {
             tab.classList.remove('qualification_active')
         })
         tab.classList.add('qualification_active')
+
     })
 })
 
@@ -193,6 +194,36 @@ const telErrorMessage = document.getElementById('tel_error_message');
 const projectErrorMessage = document.getElementById('project_error_message');
 const contentErrorMessage = document.getElementById('content_error_message');
 
+function loadThenVanishAlerts(element, duration) {
+    element.classList.add("alert_load");
+        setTimeout(() => {
+            element.classList.add("alert_vanish");
+            element.classList.remove("alert_load");
+        }, duration);
+}
+
+const inputDictionnary = [
+    {
+        inputName: formName,
+        errorMessage: nameErrorMessage
+    },
+    {
+        inputName: formEmail,
+        errorMessage: emailErrorMessage
+    },
+    {
+        inputName: formTel,
+        errorMessage: telErrorMessage
+    },
+    {
+        inputName: formProject,
+        errorMessage: projectErrorMessage
+    },
+    {
+        inputName: formContent,
+        errorMessage: contentErrorMessage
+    }
+]
 
 function sendMail() {
     if (formName.value != "" && formEmail.value != "" && formProject.value != "" && formContent.value != "" && formTel.value != "") {
@@ -207,58 +238,21 @@ function sendMail() {
         };
 
         emailjs.send('service_avzdjev', 'template_rm6zn8w', tempParams)
-        .then(function(res) {
-            console.log("succes", res.status);
-            formName.value = "";
-            formEmail.value = "";
-            formTel.value = "";
-            formProject.value = "";
-            formContent.value = "";
-
-            alertDiv.classList.add("alert_load");
-            setTimeout(() => {
-                alertDiv.classList.add("alert_vanish");
-                alertDiv.classList.remove("alert_load");
-            }, 7000);
+        .then(() => {
+            for (i = 0; i < inputDictionnary.length; i++) {
+                inputDictionnary[i].inputName.value = "";
+            }
+        
+            loadThenVanishAlerts(alertDiv, 10000)
         });
     } else {
-        if (formName.value === "") {
-            nameErrorMessage.classList.add('alert_load')
-            setTimeout(() => {
-                nameErrorMessage.classList.remove('alert_load')
-                nameErrorMessage.classList.add('alert_vanish')
-            }, 15000);
-        } else if (formEmail.value === "") {
-            emailErrorMessage.classList.add('alert_load')
-            setTimeout(() => {
-                emailErrorMessage.classList.remove('alert_load')
-                emailErrorMessage.classList.add('alert_vanish')
-            }, 15000);
-            
-        } else if (formTel.value === "") {
-            telErrorMessage.classList.add('alert_load')
-            setTimeout(() => {
-                telErrorMessage.classList.remove('alert_load')
-                telErrorMessage.classList.add('alert_vanish')
-            }, 15000);
-        } else if (formProject.value === "") {
-            projectErrorMessage.classList.add('alert_load')
-            setTimeout(() => {
-                projectErrorMessage.classList.remove('alert_load')
-                projectErrorMessage.classList.add('alert_vanish')
-            }, 15000);
-        } else {
-            contentErrorMessage.classList.add('alert_load')
-            setTimeout(() => {
-                contentErrorMessage.classList.remove('alert_load')
-                contentErrorMessage.classList.add('alert_vanish')
-            }, 15000);
+        for (i = 0; i < inputDictionnary.length; i++) {
+            if (inputDictionnary[i].inputName.value === "") {
+                loadThenVanishAlerts(inputDictionnary[i].errorMessage, 10000);
+            }
         }
-        badMessageAlertDiv.classList.add("alert_load");
-        setTimeout(() => {
-            badMessageAlertDiv.classList.add("alert_vanish");
-            badMessageAlertDiv.classList.remove("alert_load");
-        }, 15000);
+
+        loadThenVanishAlerts(badMessageAlertDiv, 10000)
     }
 }
 

@@ -643,6 +643,7 @@ img {
 .qualification_icon {
   font-size: 1.8rem;
   margin-right: var(--mb-0-25);
+  color: var(--first-color);
 }
 
 .qualification_data {
@@ -689,10 +690,6 @@ img {
 
 .qualification_active[data-content] {
   display: block;
-}
-
-.qualification_button.qualification_active {
-  color: var(--first-color);
 }
 
 /* services */
