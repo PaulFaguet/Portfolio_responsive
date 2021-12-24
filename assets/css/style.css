@@ -139,6 +139,21 @@ img {
   font-size: var(--h1-font-size);
 }
 
+.section_title::after,
+.section_title::before {
+  content: "";
+}
+
+.section_title::before {
+  background: teal;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
 .section_subtitle {
   display: block;
   font-size: var(--small-font-size);
@@ -345,6 +360,29 @@ img {
 .home_scroll-arrow {
   font-size: 1.25rem;
 }
+/* type effect */
+/*.home_typing {
+  overflow: hidden;
+  animation: typing 3.5s steps(40, end) infinite;
+  animation: cursor-blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes cursor-blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: red;
+  }
+}*/
 
 /* buttons */
 
@@ -407,7 +445,7 @@ img {
 }
 
 .about_img {
-  width: 200px;
+  width: 300px;
   border-radius: 0.5rem;
   justify-self: center;
   align-self: center;
@@ -585,8 +623,20 @@ img {
   width: 0%;
 }
 
+.skills_bootstrap {
+  width: 90%;
+}
+
 .skills_r {
-  width: 0%;
+  width: 30%;
+}
+
+.skills_sas {
+  width: 30%;
+}
+
+.skills_sql {
+  width: 50%;
 }
 
 .skills_express {
