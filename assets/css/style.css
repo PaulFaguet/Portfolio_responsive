@@ -556,27 +556,27 @@ img {
 }
 
 .skills_html {
-  width: 70%;
+  width: 90%;
 }
 
 .skills_css {
-  width: 70%;
+  width: 85%;
 }
 
 .skills_js {
-  width: 60%;
+  width: 80%;
 }
 
 .skills_react {
-  width: 20%;
-}
-
-.skills_php {
   width: 50%;
 }
 
+.skills_php {
+  width: 80%;
+}
+
 .skills_symfony {
-  width: 60%;
+  width: 70%;
 }
 
 .skills_node {
@@ -588,19 +588,19 @@ img {
 }
 
 .skills_python {
-  width: 20%;
+  width: 90%;
 }
 
 .skills_swift {
-  width: 10%;
+  width: 40%;
 }
 
 .skills_expo_rn {
-  width: 50%;
+  width: 70%;
 }
 
 .skills_ionic {
-  width: 30%;
+  width: 40%;
 }
 
 .skills_reactjs {
@@ -608,15 +608,15 @@ img {
 }
 
 .skills_alpinejs {
-  width: 10%;
+  width: 30%;
 }
 
 .skills_jquery {
-  width: 50%;
+  width: 70%;
 }
 
 .skills_tailwind {
-  width: 0%;
+  width: 30%;
 }
 
 .skills_bulma {
@@ -628,11 +628,11 @@ img {
 }
 
 .skills_r {
-  width: 30%;
+  width: 90%;
 }
 
 .skills_sas {
-  width: 30%;
+  width: 40%;
 }
 
 .skills_sql {
@@ -644,7 +644,19 @@ img {
 }
 
 .skills_wordpress {
+  width: 90%;
+}
+
+.skills_hadoop {
+  width: 0%;
+}
+
+.skills_mongo {
   width: 80%;
+}
+
+.skills_mysql {
+  width: 90%;
 }
 
 .skills_under_titles {
@@ -852,6 +864,7 @@ img {
 
 .portfolio_img {
   width: 265px;
+  height: 15em;
   border-radius: 0.5rem;
   justify-self: center;
 }
