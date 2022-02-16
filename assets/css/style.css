@@ -604,7 +604,7 @@ img {
 }
 
 .skills_reactjs {
-  width: 40%;
+  width: 50%;
 }
 
 .skills_alpinejs {
@@ -636,7 +636,7 @@ img {
 }
 
 .skills_sql {
-  width: 50%;
+  width: 90%;
 }
 
 .skills_express {
@@ -657,6 +657,10 @@ img {
 
 .skills_mysql {
   width: 90%;
+}
+
+.skills_scala {
+  width: 0%;
 }
 
 .skills_under_titles {
@@ -1182,7 +1186,7 @@ img {
   .skills_container,
   .portfolio_content,
   .project_container,
-  .contact_container,
+  /*.contact_container, permet de positionner à l'horizontal les blocs de contact-me (bloc de coordonnées et bloc de formulaire)*/ 
   .footer_container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1371,8 +1375,8 @@ img {
   .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: -4.5rem;
   }
-
+  /* permet de positionner à l'horizontal les blocs de contact-me (bloc de coordonnées et bloc de formulaire)
   .contact_form {
     width: 460px;
-  }
+  } */
 }
